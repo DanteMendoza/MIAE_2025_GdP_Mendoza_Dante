@@ -1,11 +1,11 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{KiwiScan: Sistema embebido para inspección de plantaciones de kiwis} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -15,21 +15,21 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Título y Nombre del autor}
+\autor{Lic. Dante Mendoza}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
-\codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
+\director{Esp. Ing. Roberto Guglielmino}
+\pertenenciaDirector{UNO} 
+\codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Universidad Nacional del Oeste}
+\empresaCliente{UNO}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{23 de abril de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{11 de junio de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{18 de diciembre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,13 +58,13 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
+1      & Se completa hasta el punto 5 inclusive                & {7} de {mayo} de 2024 \\ \hline
+2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
+                                                 & {14} de {mayo} de 2024 \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & {21} de {mayo} de 2024 \\ \hline
+4      & Se completa el plan	                                 & {28} de {mayo} de 2024 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de inspección de plantaciones. El trabajo tendrá un presupuesto preliminar estimado de 725 horas y un costo estimado de \$ 33.325.750 pesos argentinos (ARS), con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,51 +105,28 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+En la Argentina la actividad relacionada con la cosecha del kiwi es una de las que ganó más relevancia en las últimas décadas, donde maximizar las ganancias es crucial para que sea una actividad redituable. 
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+Actualmente, se estima el volumen de cosecha contando los frutos por unidad de superficie en una etapa avanzada de desarrollo. Sin embargo, esta estimación tardía es demasiado cercana a la cosecha y muy dificultosa en plantaciones medianas a grandes. Una estimación temprana del rendimiento permitiría tomar decisiones operativas y estratégicas. Desde el punto de vista operativo, podría orientar en cuál será la necesidad de recursos permitiendo un uso más racional de los mismos y desde el punto de vista estratégico, posibilitará anticipar la negociación de la producción en el mercado interno o externo.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Por lo tanto, el objetivo de este proyecto es desarrollar un prototipo equipado con cámaras, sensores ultrasónicos, pantalla LCD, lector de tarjetas microSD, temperatura y humedad. Este se encontrará montado en un medio de transporte adecuado a las características de la plantación. Dicho prototipo permitirá la captura automatizada de imágenes de los frutos en la plantación, así como el registro de datos ambientales relevantes durante el recorrido. Los datos se almacenarán localmente en la tarjeta microSD. Posteriormente, mediante técnicas de visión por computadora, se procesarán las imágenes para detectar objetos relevantes, como frutos en estado temprano de maduración. 
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+Finalmente, la información sobre los totales detectados y los datos meteorológicos será guardada en un archivo de texto plano. Por lo tanto, se proporciona al productor información valiosa para la toma de decisiones respecto a la planificación y ejecución de la cosecha. En la figura \ref{fig:diagBloques}, se puede apreciar un diagrama de bloques del prototipo. 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.90\textwidth]{./Figuras/KiwiScan.png}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
+\vspace{10px}
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
+En este apartado, se definirán los involucrados dentro del presente proyecto;
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -158,251 +135,281 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& -       	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & Lic. Aldana Ojeda  & -            & Investigadora       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final   & Agricultores	      & - 	& - \\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
+Por lo tanto, es importante destacar algunas características de los involucrados mencionados;
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Orientador: \supname\hspace{1px} es experto en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
+	\item Colaboradores: Lic. Aldana Ojeda es investigadora ad honorem con experiencia en el área.
+    \item Cliente: La universidad UNO es la principal interesada en llevar a cabo este trabajo de investigación.
+    \item Usuario final: Los agricultores serán los beneficiarios de la implementación.
+    \item Responsable: Será quien dispondrá del conocimiento y desarrollo del proyecto.
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+La importancia de este proyecto radica en su capacidad para acelerar el proceso de inspección de las plantaciones de kiwis, ofreciendo una alternativa eficaz a los métodos manuales convencionales. Esto se traduce en una mayor certeza en cuanto a la producción y una optimización de los recursos para los productores.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+    \item Desarrollo de un prototipo funcional.
+    \item Desarrollo del firmware para el microcontrolador.
+    \item Pruebas de funcionamiento.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+\newpage
 
-\end{consigna}
+El proyecto no incluye:
+\begin{itemize}
+	\item Desarrollo del modelo de detección de objetos.
+	\item Clasificación y toma de imágenes para entrenamiento del modelo.
+    \item Diseño y fabricación del gabinete que alojará al prototipo.
+    \item Manuales de instalación y de usuario del dispositivo.
+\end{itemize}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto, se estima que se dispondrá de los siguientes elementos o consideraciones:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Adquisición de sensores.
+	\item Importación de módulos que no se consigan en el mercado local.
+	\item Consultas a expertos en la plantación de kiwis.
+    \item Horas hombre para la codificación.
+    \item Reuniones con el equipo de trabajo.
+    \item Equipamiento informático.
+    \item Licencias de software.
+    \item Artículos de librería.
+    \item Pasajes y viáticos para visita a la plantación.
+    \item El presupuesto no superará en gran medida lo estimado.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
-
-\begin{consigna}{red}
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
+Esta sección detalla los requerimientos del software, delineando las funcionalidades y características necesarias para cumplir con los objetivos del proyecto.
 
 \begin{enumerate}
 	\item Requerimientos funcionales:
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El sistema debe registrar la temperatura del ambiente.
+			\item El sistema debe registrar la humedad del ambiente.
+			\item El sistema debe informar el espacio disponible de la tarjeta microSD.
+            \item El sistema debe informar la cantidad de fotos tomadas.
 		\end{enumerate}
-	\item Requerimientos de documentación:
+	\item Requerimientos no funcionales:
 		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
+			\item El sistema debe ser escalable, de forma de poder agregar más sensores en el futuro.
+			\item El firmware debe estar modularizado.
+            \item El firmware debe estar sobre un sistema operativo.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+    \item Requerimientos de interfaz gráfica en la pantalla LCD:
+		\begin{enumerate}
+			\item Se debe mostrar los valores de humedad y temperatura.
+			\item Se debe mostrar el espacio disponible en la tarjeta microSD.
+            \item Se debe mostrar la cantidad de fotos tomadas.
+            \item La información en pantalla debe actualizarse cada 5 segundos.
+		\end{enumerate}
+    \item Requerimientos de interoperabilidad:
+		\begin{enumerate}
+			\item Las fotos deben almacenarse en un formato de archivo JPG o JPEG.
+			\item Las imágenes capturadas deben tener un mínimo de resolución de 640 x 480.
+            \item Cada imagen guardada no debe superar los 10 MB.
+		\end{enumerate}
+    \item Requerimientos de documentación:
+		\begin{enumerate}
+			\item Se debe presentar un informe de avance del proyecto.
+			\item Se debe presentar una memoria técnica al final del proyecto.
+		\end{enumerate}
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+Se utiliza la serie de Fibonacci: 0, 1, 3, 5, 8, 13, 21, 34. . . para establecer los pesos de las historias de usuario. Se suman los pesos de : cantidad de esfuerzo a realizar, complejidad del trabajo y riesgo o incertidumbre del proyecto. Si el peso no coincide con alguno de la serie se asigna el inmediato superior.
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
-
-El formato propuesto es: 
+Tabla de pesos:
 \begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
+\item Cantidad de trabajo a realizar
+	\begin{enumerate}
+	\item Bajo $\rightarrow$ peso 1 
+	\item Medio $\rightarrow$ peso 3
+	\item Alto $\rightarrow$ peso 5
+	\end{enumerate}
+\item Complejidad del trabajo a realizar
+	\begin{enumerate}
+	\item Bajo $\rightarrow$ peso 1 
+	\item Medio $\rightarrow$ peso 3
+	\item Alto $\rightarrow$ peso 5
+	\end{enumerate}
+\item Riesgo o incertidumbre del trabajo a realizar
+	\begin{enumerate}
+	\item Bajo $\rightarrow$ peso 1 
+	\item Medio $\rightarrow$ peso 3
+	\item Alto $\rightarrow$ peso 5
+	\end{enumerate}
 \end{enumerate}
-\end{consigna}
+
+Historia de usuario 1: “Como agricultor quiero ver la cantidad de frutos estimados para planificar la cosecha."
+\\
+Dificultad: alto (5) $\rightarrow$ Porque involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Hay que obtener las imágenes de la plantación.
+\\
+Riesgo: medio (3) $\rightarrow$ Problemas que un evento climático arruine la cosecha y por ende la fuente de datos a utilizar.
+\\
+Story Point = 13
+\\
+\\
+Historia de usuario 2: “Como agricultor quiero ver la temperatura del día en que se tomaron las fotos para comprobar si es adecuado para el tipo de fruto."
+\\
+Dificultad: bajo (1) $\rightarrow$ Por que no involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: bajo (1) $\rightarrow$ El módulo DHT11 es sencillo de utilizar.
+\\
+Riesgo: bajo (1) $\rightarrow$ El módulo DHT11 tiene una precisión que ronda los +-2 del valor real.
+\\
+Story Point = 3
+\\
+\\
+Historia de usuario 3: “Como agricultor quiero ver la humedad del día en que se tomaron las fotos para comprobar si es adecuado para el tipo de fruto."
+\\
+Dificultad: bajo (1) $\rightarrow$ Por que no involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: bajo (1) $\rightarrow$ El módulo DHT11 es sencillo de utilizar.
+\\
+Riesgo: bajo (1) $\rightarrow$ El módulo DHT11 tiene una precisión que ronda los +-2 del valor real.
+\\
+Story Point = 3
+\\
+\\
+Historia de usuario 4: “Como operario quiero ver la cantidad de memoria disponible en la tarjeta microSD para comprobar si puedo continuar con la actividad."
+\\
+Dificultad: medio (3) $\rightarrow$ Por que involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con tarjetas microSD tiene cierta complejidad.
+\\
+Riesgo: medio (3) $\rightarrow$ Que tal vez no se puedan reconocer tarjetas microSD de determinados fabricantes.
+\\
+Story Point = 13
+\\
+\\
+Historia de usuario 5: “Como operario quiero ver la cantidad de fotos que fueron tomadas durante el recorrido para comprobar si el proceso funcionó correctamente."
+\\
+Dificultad: medio (3) $\rightarrow$ Por que involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con tarjetas microSD tiene cierta complejidad.
+\\
+Riesgo: medio (3) $\rightarrow$ Que tal vez no se puedan reconocer tarjetas microSD de determinados fabricantes.
+\\
+Story Point = 13
+
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
-	\item Código fuente del firmware.
+	\item Código fuente no editable.
 	\item Diagrama de instalación.
-	\item Memoria del trabajo final.
-	\item etc...
+	\item Documentación del proyecto.
 \end{itemize}
-\end{consigna}
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1 (suma h)
+\item Documentación y análisis preliminar (75 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Planificación del proyecto (20 h)
+	\item Especificación de requisitos de software (40 h)
+	\item Definición de las pruebas de aceptación (15 h)
 	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
+\item Búsqueda de material bibliográfico (100 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Buscar hojas de datos de todos los componentes (40 h)
+	\item Estudiar cómo funciona cada uno de los componentes (40 h)
+	\item Investigar sobre dispositivos con funciones similares (20 h)
 	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
+\item Comprensión del objeto de trabajo (90 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Estudiar cómo se compone una plantación de kiwi (20 h)
+	\item Características y tipos de frutos (20 h)
+	\item Métodos de estimación de la cosecha (20 h)
+	\item Impacto de las variables climatológicas (20 h)
+	\item Reuniones con especialistas en la plantación (10 h)
+	\end{enumerate}
+ \item Preparación del hardware del sistema (80 h)
+	\begin{enumerate}
+	\item Selección de componentes (30 h)
+	\item Configuraciones de los componentes (30 h)
+	\item Pruebas de conexiones y funcionamiento (20 h)
+	\end{enumerate}
+ \item Desarrollo del firmware (230 h)
+	\begin{enumerate}
+	\item Diseño de la arquitectura del firmware (20 h)
+	\item Desarrollo del driver para el sensor de temperatura y humedad ambiente (30 h)
+	\item Desarrollo del driver para el sensor de distancia (30 h)
+	\item Desarrollo del driver para la pantalla LCD (30 h)
+	\item Desarrollo del driver para la tarjeta microSD (30 h)
+    \item Desarrollo del driver para el módulo de cámara digital (30 h)
+	\item Montar el sistema operativo (15 h)
+    \item Implementar la biblioteca HAL (10 h)
+	\item Integración de los módulos (35 h)
+	\end{enumerate}
+ \item Testing (30 h)
+	\begin{enumerate}
+	\item Testeo del ensamblaje del hardware (10 h)
+	\item Testeo del firmware (10 h)
+	\item Depuración del firmware (10 h)
+	\end{enumerate}
+ \item Cierre del proyecto (120 h)
+	\begin{enumerate}
+	\item Informes de avance del proyecto (20 h)
+	\item Elaboración de la memoria técnica del trabajo final (80 h)
+	\item Presentación final del proyecto (20 h)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: tantas.
+Cantidad total de horas: (725 h)
 
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
-
+\begin{landscape}
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
+En la figura \ref{fig:DAON} se resalta en color rojo las flechas que corresponden al camino crítico y a las que hay que prestar mayor atención. La suma del camino crítico estima un tiempo de desarrollo del proyecto de 540 horas.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=24cm , height=11cm]{./Figuras/DAON.png}
 \caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
+\label{fig:DAON}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
+\end{landscape}
 
-\end{consigna}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
+En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto. Para su realización se estableció un horario laboral de 6 horas de lunes a viernes.
 
 \begin{figure}[htpb]
   \begin{center}
@@ -410,72 +417,68 @@ ajustar este valor y, quizás, acortar los nombres de las tareas.
       time slot unit=day,
       time slot format=isodate,
       x unit=0.038cm,
-      y unit title=0.7cm,
+      y unit title=0.4cm,
       y unit chart=0.6cm,
       milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
+      ]{2024-06-17}{2024-12-18}
+      \gantttitlecalendar*{2024-06-17}{2024-12-18}{year} \\
+      \gantttitlecalendar*{2024-06-17}{2024-12-18}{month} \\
+      \ganttgroup{Duración Total}{2024-06-17}{2024-10-31} \\
+      %%%%%%%%%%%%%%%%%Documentación y análisis preliminar
+      \ganttgroup{Documentación y análisis preliminar}{2024-06-17}{2024-06-20} \\
+      \ganttbar{Planificación del proyecto}{2024-06-17}{2024-06-20} \\
+      \ganttbar{Especificación de requisitos de software}{2024-06-17}{2024-06-20} \\
+      \ganttbar{Definición de las pruebas de aceptación}{2024-06-17}{2024-06-20} \\
+      %%%%%%%%%%%%%%%%%Búsqueda de material bibliográfico
+      \ganttgroup{Búsqueda de material bibliográfico}{2024-06-21}{2024-6-30} \\
+      \ganttbar{Buscar hojas de datos de todos los componentes}{2024-06-21}{2024-6-27} \\
+      \ganttbar{Estudiar cómo funciona cada uno de los componentes}{2024-06-21}{2024-6-27} \\
+      \ganttbar{Investigar sobre dispositivos con funciones similares}{2024-6-28}{2024-6-30} \\
+      %%%%%%%%%%%%%%%%%Comprensión del objeto de trabajo
+      \ganttgroup{Comprensión del objeto de trabajo}{2024-07-1}{2024-7-4} \\
+      \ganttbar{Estudiar cómo se compone una plantación de kiwi}{2024-07-1}{2024-7-4} \\
+      \ganttbar{Características y tipos de frutos}{2024-07-1}{2024-7-4} \\
+      \ganttbar{Métodos de estimación de la cosecha}{2024-07-1}{2024-7-4} \\
+      \ganttbar{Impacto de las variables climatológicas}{2024-07-1}{2024-7-4} \\
+      \ganttbar{Reuniones con especialistas en la plantación}{2024-07-1}{2024-7-2} \\
+      %%%%%%%%%%%%%%%%%Preparación del hardware del sistema
+      \ganttgroup{Preparación del hardware del sistema}{2024-07-5}{2024-9-3} \\
+      \ganttbar{Selección de componentes}{2024-07-5}{2024-7-10} \\
+      \ganttbar{Configuraciones de los componentes}{2024-07-11}{2024-7-15} \\
+      \ganttbar{Pruebas de conexiones y funcionamiento}{2024-08-31}{2024-9-3} \\
+      %%%%%%%%%%%%%%%%%Desarrollo del firmware
+      \ganttgroup{Desarrollo del firmware}{2024-07-21}{2024-8-30} \\
+      \ganttbar{Diseño de la arquitectura del firmware}{2024-07-21}{2024-7-24} \\
+      \ganttbar{Desarrollo del driver para el sensor de temperatura y humedad}{2024-07-25}{2024-7-30} \\
+      \ganttbar{Desarrollo del driver para el sensor de distancia}{2024-07-31}{2024-8-4} \\
+      \ganttbar{Desarrollo del driver para la pantalla LCD}{2024-08-5}{2024-8-10} \\
+      \ganttbar{Desarrollo del driver para la tarjeta microSD}{2024-08-11}{2024-8-15} \\
+      \ganttbar{Desarrollo del driver para el módulo de cámara digital}{2024-08-16}{2024-8-20} \\
+      \ganttbar{Montar el sistema operativo}{2024-08-21}{2024-8-22} \\
+      \ganttbar{Implementar la biblioteca HAL}{2024-08-23}{2024-8-24} \\
+      \ganttbar{Integración de los módulos}{2024-08-25}{2024-8-30} \\
+      %%%%%%%%%%%%%%%%%Testing
+      \ganttgroup{Testing}{2024-09-4}{2024-9-10} \\
+      \ganttbar{Testeo del ensamblaje del hardware}{2024-09-4}{2024-9-6} \\
+      \ganttbar{Testeo del firmware}{2024-09-7}{2024-9-8} \\
+      \ganttbar{Depuración del firmware}{2024-09-9}{2024-9-10} \\
+      %%%%%%%%%%%%%%%%%Cierre del proyecto
+      \ganttgroup{Cierre del proyecto}{2024-09-11}{2024-10-3} \\
+      \ganttbar{Informes de avance del proyecto}{2024-09-11}{2024-9-14} \\
+      \ganttbar{Elaboración de la memoria técnica del trabajo final}{2024-09-15}{2024-9-29} \\
+      \ganttbar{Presentación final del proyecto}{2024-09-30}{2024-10-3} \\
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{ganttchart}
   \end{center}
-  \caption{Diagrama de gantt de ejemplo}
+  \caption{Diagrama de Gantt.}
   \label{fig:gantt}
 \end{figure}
-
-
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
-\label{fig:diagGantt}
-\end{figure}
-
-\end{landscape}
-
-\end{consigna}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
+Los precios expresados en la siguiente tabla se encuentran en peso argentino (ARS) y fue estimado el 20 de mayo del 2024.
 
 \begin{table}[htpb]
 \centering
@@ -487,85 +490,133 @@ Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} 
+  \\ 
+  \hline Tarjeta de desarrollo STM32F429ZI
  &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{23 491} &
+  \multicolumn{1}{c|}{23 491} 
+  \\ 
+  \hline Módulo Dht11 Sensor De Temperatura Humedad
  &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{2 399} &
+  \multicolumn{1}{c|}{2 399} 
+  \\ 
+  \hline Sensor Ultrasonico Hc Sr04
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{2 300} &
+  \multicolumn{1}{c|}{2 300}
+  \\ 
+  \hline Modulo Display Lcd 16x2 Con I2c
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{5 785} &
+  \multicolumn{1}{c|}{5 785}
+  \\ 
+  \hline Módulo Lector De Tarjetas Micro Sd
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{3 600} &
+  \multicolumn{1}{c|}{3 600}
+  \\ 
+  \hline Módulo cámara OV7670
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{8 000} &
+  \multicolumn{1}{c|}{8 000}
+  \\ 
+  \hline Kit 40 Cables Dupont
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{2 712} &
+  \multicolumn{1}{c|}{2 712}
+  \\ 
+  \hline Batería 3.7v 2000 mA
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{15 205} &
+  \multicolumn{1}{c|}{15 205}
+  \\ 
+  \hline Cable USB mallado
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{5 300} &
+  \multicolumn{1}{c|}{5 300}
+  \\ 
+  \hline Horas de ingeniería
+ &
+  \multicolumn{1}{c|}{725} &
+  \multicolumn{1}{c|}{35 264} &
+  \multicolumn{1}{c|}{25 566 400}
+  \\ 
+  \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{25 635 192} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} 
+  \\ 
+  \hline 30 \% de los costos directos
+&
+\multicolumn{1}{|l|}{1} &
+\multicolumn{1}{|l|}{1} &
+\multicolumn{1}{|l|}{7 690 558} 
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{7 690 558} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
+\multicolumn{1}{|l|}{33 325 750} 
+   \\ \hline 
+\end{tabularx}
 \end{table}
 
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
+En este apartado se mencionan los posibles riesgos del proyecto y el plan de mitigación.
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: demora para conseguir los componentes electrónicos requeridos.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad (7): el proyecto sufrirá retrasos en su desarrollo.\\
+	\item Probabilidad de ocurrencia (6): el mercado local no cuenta con el stock de los componentes necesarios para el proyecto.
+\\
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: daño o pérdida del hardware del proyecto.
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (8): esto genera un retraso importante en la ejecución de las actividades del proyecto en la fase de implementación y pruebas.\\
+	\item Ocurrencia (4): el encargado del proyecto será una persona muy cuidadosa y responsable.\\
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: mala estimación de la planificación.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (7): el proyecto sufrirá varios cambios y retrasos en la ejecución.\\
+	\item Ocurrencia (8): no se cuenta con experiencia en planificación de proyectos.\\
 \end{itemize}
 
+Riesgo 4: variación de precios en la compra del hardware.
+\begin{itemize}
+	\item Severidad (8): el capital necesario para adquirir el equipo del proyecto se vería afectado.\\
+	\item Ocurrencia (8): se tiene conocimiento de que existe mucha fluctuación en los precios de mercado.\\
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 5: retraso en la programación del firmware.
+\begin{itemize}
+	\item Severidad (8): retrasos en el proyecto debido a que el firmware es una parte fundamental en el momento de la integración e implementación del prototipo.\\
+	\item Ocurrencia (7): falta de conocimiento y experiencia en la tecnología del hardware.\\
+\end{itemize}
+
+b) Tabla de gestión de riesgos:
 
 \begin{table}[htpb]
 \centering
@@ -573,77 +624,160 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Demora para conseguir los componentes electrónicos requeridos & 7 & 6 & 42  &    &    &      \\ \hline
+Daño o pérdida del hardware del proyecto & 8 & 4 & 32  &    &    &      \\ \hline
+Mala estimación de la planificación & 7 & 8 & \cellcolor{red}{56}  & 8  & 5  & \cellcolor{green}{40}   \\ \hline
+Variación de precios en la compra del hardware & 8 & 8 & \cellcolor{red}{64}  & 9 & 5  & \cellcolor{green}{45}   \\ \hline
+Retraso en la programación del firmware & 8 & 7 & \cellcolor{red}{56}  & 8  & 5  & \cellcolor{green}{40}   \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
-
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Criterio adoptado: se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 45.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
+Riesgo 3*: se consultará con el director la planificación para ajustar los tiempos de las tareas de acuerdo a su experiencia.
   \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+	\item Severidad (8): probabilidad que se modifiquen tiempos ya definidos a tareas.
+	\item Probabilidad de ocurrencia (5): Se reduce el riesgo de hacer una mala planificación del proyecto.
 	\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 4*: se consultará con el cliente la posibilidad de efectuar compras de hardware con anticipación.
+  \begin{itemize}
+	\item Severidad (9): puede que el cliente no disponga de capital para hacer una compra anticipada.
+	\item Probabilidad de ocurrencia (5): se reduce el riesgo de variación de precios.
+	\end{itemize}
 
-\end{consigna}
+Riesgo 5*: Se dedicará más tiempo a la investigación de la tecnología y se buscará ayuda en algún ingeniero que haya desarrollado proyectos de estas características.
+  \begin{itemize}
+	\item Severidad (8): No cambia.
+	\item Probabilidad de ocurrencia (5): Se obtendrá mayor conocimiento y experiencia en este tipo de tecnología.
+	\end{itemize}
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+Para cada uno de los requerimientos funcionales, a continuación, se lista su respectiva verificación y validación. Estas serán llevadas a cabo por el responsable del proyecto.
 
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
-
+\item Req \#1.1: El sistema debe registrar la temperatura del ambiente.
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+	\item Verificación: Revisar que el módulo realiza la toma de temperatura correctamente.
+	\item Validación: Probar que se obtuvieron los valores del sensor mostrando los datos obtenidos en un monitor serial.
+\end{itemize}
 \end{itemize}
 
+\begin{itemize} 
+\item Req \#1.2: El sistema debe registrar la humedad del ambiente.
+\begin{itemize}
+	\item Verificación: Revisar que el módulo realiza la toma de humedad correctamente.
+	\item Validación: Probar que se obtuvieron los valores del sensor mostrando los datos obtenidos en un monitor serial.
+\end{itemize}
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
+\begin{itemize} 
+\item Req \#1.3: El sistema debe informar el espacio disponible de la tarjeta microSD.
+\begin{itemize}
+	\item Verificación: Revisar que el módulo realiza el registro de la información guardada.
+	\item Validación: Conectar la tarjeta microSD en una computadora para comparar el espacio disponible con lo informado por el sistema.
+\end{itemize}
+\end{itemize}
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
+\begin{itemize} 
+\item Req \#1.4: El sistema debe informar la cantidad de fotos tomadas.
+\begin{itemize}
+	\item Verificación: Revisar si se guardan las fotografías en el medio de almacenamiento.
+	\item Validación: Probar de contabilizar el total de fotos y mostrar el valor en un monitor serial.
+\end{itemize}
+\end{itemize}
 
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\begin{itemize} 
+\item Req \#2.2: El firmware debe estar modularizado.
+\begin{itemize}
+	\item Verificación: Comprobar si se armaron distintos módulos para cada dispositivo.
+	\item Validación: Hacer funcionar cada módulo de manera aislada para ver los resultados obtenidos.
+\end{itemize}
+\end{itemize}
 
-\end{consigna}
+\begin{itemize} 
+\item Req \#2.3: El firmware debe estar sobre un sistema operativo.
+\begin{itemize}
+	\item Verificación: Revisar el funcionamiento del sistema operativo.
+	\item Validación: Realizar llamadas al sistema operativo y comprobar su respuesta.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#3.4: La información en pantalla debe actualizarse cada 5 segundos.
+\begin{itemize}
+	\item Verificación: Revisar el funcionamiento de la pantalla LCD.
+	\item Validación: Inspeccionar visualmente si la información mostrada es actualizada en el lapso de tiempo establecido.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#4.1: Las fotos deben almacenarse en un formato de archivo JPG o JPEG.
+\begin{itemize}
+	\item Verificación: Revisar si la imagen está almacenada correctamente.
+	\item Validación: Inspeccionar visualmente en una computadora si la imagen tiene la extensión de archivo esperada.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#4.2: Las imágenes capturadas deben tener un mínimo de resolución de 640 x 480.
+\begin{itemize}
+	\item Verificación: Revisar si la imagen está almacenada correctamente.
+	\item Validación: Inspeccionar visualmente en una computadora si la resolución de archivo es la esperada.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#4.3: Cada imagen guardada no debe superar los 10 MB.
+\begin{itemize}
+	\item Verificación: Revisar si la imagen está almacenada correctamente.
+	\item Validación: Inspeccionar visualmente en una computadora si el tamaño de archivo es el esperado.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#5.2: Se debe presentar una memoria técnica al final del proyecto.
+\begin{itemize}
+	\item Verificación: Verificar que se haya presentado la memoria técnica del proyecto.
+	\item Validación: Revisar que se cumplieron los requerimientos estipulados en el plan de proyecto.
+\end{itemize}
+\end{itemize}
+
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
-
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+En esta sección se establecen las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
 \begin{itemize}
 	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
+    \begin{itemize}
+        \item Encargado: \authorname
+        \item Procedimiento: Se analizará el cumplimiento con los requerimientos y cronograma establecidos. En el caso de hallar requerimientos incumplidos y/o retrasos en las tareas se evaluarán las causas y se propondrán acciones para evitarlo en futuros proyectos.
+    \end{itemize}
 \end{itemize}
 
-\end{consigna}
+\begin{itemize}
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:\\
+    \begin{itemize}
+        \item Encargado: \authorname
+        \item Procedimiento: Se evaluarán los procedimientos utilizados en función a su utilidad y eficiencia para alcanzar los objetivos predefinidos. Se analizarán los problemas surgidos y las medidas paliativas.
+    \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
+    \begin{itemize}
+        \item Encargado: \authorname
+        \item Procedimiento: Tras la exposición pública del proyecto frente al jurado, se llevará a cabo un expresivo reconocimiento hacia aquellos que contribuyeron a su realización, incluyendo al director del trabajo, los miembros del jurado y las autoridades de la CESE.
+    \end{itemize}
+\end{itemize}
+
 
 \end{document}
