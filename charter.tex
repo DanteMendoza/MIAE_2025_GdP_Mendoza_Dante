@@ -5,21 +5,21 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{KiwiScan: Sistema embebido para inspección de plantaciones de kiwis} 
+\titulo{Monitoreo inteligente para plantaciones agrícolas basado en visión por computadora y análisis de imágenes} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Maestría en inteligencia artificial embebida} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Lic. Dante Mendoza}
+\autor{Esp. Lic. Dante Mendoza}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Esp. Ing. Roberto Guglielmino}
-\pertenenciaDirector{UNO} 
+\director{A DEFINIR}
+\pertenenciaDirector{A DEFINIR} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
@@ -27,9 +27,9 @@
 \cliente{Universidad Nacional del Oeste}
 \empresaCliente{UNO}
  
-\fechaINICIO{23 de abril de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{11 de junio de 2024} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{18 de diciembre de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{29 de abril de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{10 de junio de 2025} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{18 de diciembre de 2025}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,13 +58,13 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                & {7} de {mayo} de 2024 \\ \hline
+1      & Se completa hasta el punto 5 inclusive                & {13} de {mayo} de 2025 \\ \hline
 2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
-                                                 & {14} de {mayo} de 2024 \\ \hline
-3      & Se completa hasta el punto 12 inclusive                & {21} de {mayo} de 2024 \\ \hline
-4      & Se completa el plan	                                 & {28} de {mayo} de 2024 \\ \hline
+                                                 & {20} de {mayo} de 2025 \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & {27} de {mayo} de 2025 \\ \hline
+4      & Se completa el plan	                                 & {03} de {junio} de 2025 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de inspección de plantaciones. El trabajo tendrá un presupuesto preliminar estimado de 725 horas y un costo estimado de \$ 33.325.750 pesos argentinos (ARS), con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de inspección de plantaciones. El trabajo tendrá un presupuesto preliminar estimado de 725 horas y un costo estimado de \$ 799.500 pesos argentinos (ARS), con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,13 +105,13 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-En la Argentina la actividad relacionada con la cosecha del kiwi es una de las que ganó más relevancia en las últimas décadas, donde maximizar las ganancias es crucial para que sea una actividad redituable. 
+En la Argentina la actividad relacionada con la cosecha del kiwi ha ganado una relevancia creciente en las últimas décadas, donde maximizar las ganancias es crucial para que sea una actividad redituable. 
 
-Actualmente, se estima el volumen de cosecha contando los frutos por unidad de superficie en una etapa avanzada de desarrollo. Sin embargo, esta estimación tardía es demasiado cercana a la cosecha y muy dificultosa en plantaciones medianas a grandes. Una estimación temprana del rendimiento permitiría tomar decisiones operativas y estratégicas. Desde el punto de vista operativo, podría orientar en cuál será la necesidad de recursos permitiendo un uso más racional de los mismos y desde el punto de vista estratégico, posibilitará anticipar la negociación de la producción en el mercado interno o externo.
+Actualmente, el volumen de cosecha se estima mediante el conteo de frutos por unidad de superficie en una etapa avanzada de desarrollo. Sin embargo, esta estimación tardía resulta demasiado cercana al momento de la cosecha y presenta grandes dificultades en plantaciones de tamaño mediano o grande. Una estimación temprana del rendimiento permitiría tomar decisiones tanto operativas como estratégicas. Desde el punto de vista operativo, facilitaría una planificación más racional del uso de los recursos. Desde el punto de vista estratégico, haría posible anticipar la negociación de la producción en los mercados interno o externo.
 
-Por lo tanto, el objetivo de este proyecto es desarrollar un prototipo equipado con cámaras, sensores ultrasónicos, pantalla LCD, lector de tarjetas microSD, temperatura y humedad. Este se encontrará montado en un medio de transporte adecuado a las características de la plantación. Dicho prototipo permitirá la captura automatizada de imágenes de los frutos en la plantación, así como el registro de datos ambientales relevantes durante el recorrido. Los datos se almacenarán localmente en la tarjeta microSD. Posteriormente, mediante técnicas de visión por computadora, se procesarán las imágenes para detectar objetos relevantes, como frutos en estado temprano de maduración. 
+Por lo tanto, el objetivo de este proyecto es desarrollar un prototipo equipado con cámaras, sensores ultrasónicos, pantalla LCD, lector de tarjetas microSD, y sensores de temperatura y humedad. El dispositivo será montado sobre un medio de transporte adecuado a las características de la plantación. Permitirá la captura automática de imágenes de los frutos, así como el registro de datos ambientales relevantes durante el recorrido. Todos los datos se almacenarán localmente en una tarjeta microSD. Posteriormente, las imágenes serán procesadas mediante técnicas de visión por computadora para detectar objetos relevantes, como frutos en etapas tempranas de maduración. De este modo, se obtendrá una estimación del volumen de cosecha.
 
-Finalmente, la información sobre los totales detectados y los datos meteorológicos será guardada en un archivo de texto plano. Por lo tanto, se proporciona al productor información valiosa para la toma de decisiones respecto a la planificación y ejecución de la cosecha. En la figura \ref{fig:diagBloques}, se puede apreciar un diagrama de bloques del prototipo. 
+Finalmente, la información sobre los frutos detectados y los datos meteorológicos se utilizarán para aplicar técnicas de agrupamiento no supervisado, con el fin de identificar patrones ocultos entre las variables ambientales y la cantidad de frutos, y segmentar automáticamente zonas con comportamientos similares. Toda la información generada se almacenará en un archivo de texto plano. Esta solución proporcionará al productor información valiosa para la toma de decisiones en relación con la planificación y ejecución de la cosecha. En la figura \ref{fig:diagBloques}, se puede apreciar un diagrama de bloques del prototipo.
 
 \begin{figure}[htpb]
 \centering 
@@ -146,7 +146,7 @@ Usuario final   & Agricultores	      & - 	& - \\ \hline
 Por lo tanto, es importante destacar algunas características de los involucrados mencionados;
 
 \begin{itemize}
-	\item Orientador: \supname\hspace{1px} es experto en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
+	\item Orientador: \supname\hspace{1px} es experto en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del modelo de detección de objetos.
 	\item Colaboradores: Lic. Aldana Ojeda es investigadora ad honorem con experiencia en el área.
     \item Cliente: La universidad UNO es la principal interesada en llevar a cabo este trabajo de investigación.
     \item Usuario final: Los agricultores serán los beneficiarios de la implementación.
@@ -157,7 +157,7 @@ Por lo tanto, es importante destacar algunas características de los involucrado
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-La importancia de este proyecto radica en su capacidad para acelerar el proceso de inspección de las plantaciones de kiwis, ofreciendo una alternativa eficaz a los métodos manuales convencionales. Esto se traduce en una mayor certeza en cuanto a la producción y una optimización de los recursos para los productores.
+La importancia de este proyecto radica en su potencial para automatizar y agilizar el proceso de inspección de plantaciones de kiwis, ofreciendo una alternativa eficiente y tecnológica a los métodos manuales tradicionales. Al integrar dispositivos de captura de imágenes y recolección de datos ambientales con técnicas de visión por computadora y análisis no supervisado, se proporciona una herramienta  que permite estimar con mayor anticipación el volumen de producción. Esto no solo mejora la precisión en la planificación de la cosecha, sino que también optimiza el uso de los recursos disponibles, generando un impacto positivo en la eficiencia y rentabilidad del productor.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -165,16 +165,16 @@ La importancia de este proyecto radica en su capacidad para acelerar el proceso 
 El proyecto incluye:
 \begin{itemize}
     \item Desarrollo de un prototipo funcional.
-    \item Desarrollo del firmware para el microcontrolador.
+    \item Desarrollo del modelo de detección de objetos.
+    \item Toma de imágenes para entrenamiento del modelo.
+    \item Clasificación y etiquetado de las imágenes.
+    \item Aplicar técnicas de agrupamiento no supervisado (\textit{clustering}).
     \item Pruebas de funcionamiento.
 \end{itemize}
 
-\newpage
-
 El proyecto no incluye:
 \begin{itemize}
-	\item Desarrollo del modelo de detección de objetos.
-	\item Clasificación y toma de imágenes para entrenamiento del modelo.
+	
     \item Diseño y fabricación del gabinete que alojará al prototipo.
     \item Manuales de instalación y de usuario del dispositivo.
 \end{itemize}
@@ -186,16 +186,20 @@ El proyecto no incluye:
 Para el desarrollo del presente proyecto, se estima que se dispondrá de los siguientes elementos o consideraciones:
 
 \begin{itemize}
-	\item Adquisición de sensores.
-	\item Importación de módulos que no se consigan en el mercado local.
-	\item Consultas a expertos en la plantación de kiwis.
+    \item Sistema de gestión de bases de datos.
+    \item Control de versiones.
+    \item Consultas a expertos en la plantación de kiwis.
+    \item Servicios en la nube para almacenamiento.
+    \item Herramientas de análisis de datos.
     \item Horas hombre para la codificación.
     \item Reuniones con el equipo de trabajo.
     \item Equipamiento informático.
     \item Licencias de software.
     \item Artículos de librería.
+    \item Embalaje y protección.
     \item Pasajes y viáticos para visita a la plantación.
-    \item El presupuesto no superará en gran medida lo estimado.
+    \item Presupuesto adicional para imprevistos.
+    \item La previsión de costos no superará en gran medida lo estimado.
 \end{itemize}
 
 
@@ -210,12 +214,18 @@ Esta sección detalla los requerimientos del software, delineando las funcionali
 			\item El sistema debe registrar la humedad del ambiente.
 			\item El sistema debe informar el espacio disponible de la tarjeta microSD.
             \item El sistema debe informar la cantidad de fotos tomadas.
+            \item El sistema debe contabilizar los frutos detectados en cada imagen.
+            \item El sistema debe informar el volumen total estimado de cosecha.
+            \item Generar un resumen final con la segmentación de zonas que presentaron comportamientos similares en la producción.
 		\end{enumerate}
 	\item Requerimientos no funcionales:
 		\begin{enumerate}
 			\item El sistema debe ser escalable, de forma de poder agregar más sensores en el futuro.
 			\item El firmware debe estar modularizado.
             \item El firmware debe estar sobre un sistema operativo.
+            \item El modelo de IA debe ser capaz de identificar frutos en diferentes estados de maduración con al menos un 80\% de precisión en condiciones normales de luz.
+            \item El modelo de detección debe ejecutarse de forma local o en un entorno que no dependa de conectividad a internet.
+            \item El sistema debe aplicar algoritmos de agrupamiento no supervisado (por ejemplo, K-means o DBSCAN) para segmentar zonas de producción según las variables registradas.
 		\end{enumerate}
     \item Requerimientos de interfaz gráfica en la pantalla LCD:
 		\begin{enumerate}
@@ -241,7 +251,7 @@ Esta sección detalla los requerimientos del software, delineando las funcionali
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-Se utiliza la serie de Fibonacci: 0, 1, 3, 5, 8, 13, 21, 34. . . para establecer los pesos de las historias de usuario. Se suman los pesos de : cantidad de esfuerzo a realizar, complejidad del trabajo y riesgo o incertidumbre del proyecto. Si el peso no coincide con alguno de la serie se asigna el inmediato superior.
+Se utiliza la serie de Fibonacci: 0, 1, 3, 5, 8, 13, 21, 34. . . para establecer los pesos de las historias de usuario. Se suman los pesos de: cantidad de esfuerzo a realizar, complejidad del trabajo y riesgo o incertidumbre del proyecto. Si el peso no coincide con alguno de la serie se asigna el inmediato superior.
 
 Tabla de pesos:
 \begin{enumerate}
@@ -318,6 +328,50 @@ Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con tarjetas microSD
 Riesgo: medio (3) $\rightarrow$ Que tal vez no se puedan reconocer tarjetas microSD de determinados fabricantes.
 \\
 Story Point = 13
+\\
+\\
+Historia de usuario 6: “Como agricultor deseo ver cuántos frutos fueron detectados en cada imagen para ver el estado de maduración"
+\\
+Dificultad: medio (3) $\rightarrow$ Por que involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con modelos de detección de objetos tiene determinada complejidad.
+\\
+Riesgo: medio (3) $\rightarrow$ Que tal vez no se logren detectar todos los frutos presente en la imagen.
+\\
+Story Point = 13
+\\
+\\
+Historia de usuario 7: “Como agricultor deseo ver el volumen total de cosecha estimado para decidir su recolección."
+\\
+Dificultad: medio (3) $\rightarrow$ Por que involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con modelos de detección de objetos tiene determinada complejidad.
+\\
+Riesgo: medio (3) $\rightarrow$ Que tal vez no se logren detectar todos los frutos presente en todas las imágenes.
+\\
+Story Point = 13
+\\
+\\
+Historia de usuario 8: “Como agricultor deseo ver si existe alguna relación entre la producción y los datos ambientales para encontrar zonas más beneficiosas en la plantación."
+\\
+Dificultad: medio (3) $\rightarrow$ Por que involucra muchas horas de ingeniería y desarrollo.
+\\
+Complejidad: medio (3) $\rightarrow$ Se conoce que trabajar con técnicas de agrupamiento es complejo.
+\\
+Riesgo: medio (3) $\rightarrow$ Que tal vez no se logre encontrar ninguna agrupación con los datos recolectados.
+\\
+Story Point = 13
+\\
+\\
+Historia de usuario 9: “Como agricultor deseo que el sistema genere un resumen de toda la información procesada para tomar decisiones logísticas."
+\\
+Dificultad: bajo (1) $\rightarrow$ Por que no tiene mayor dificultad resumir toda la información generada.
+\\
+Complejidad: bajo (1) $\rightarrow$ Su desarrollo no sería complejo.
+\\
+Riesgo: bajo (1) $\rightarrow$ Que tal vez no haya información de entrada suficiente como para generar un resumen.
+\\
+Story Point = 3
 
 
 \section{8. Entregables principales del proyecto}
@@ -327,6 +381,8 @@ Los entregables del proyecto son:
 
 \begin{itemize}
 	\item Código fuente no editable.
+        \item Conjunto de imágenes etiquetadas para entrenamiento del modelo.
+        \item Modelo entrenado para detectar los frutos de la plantación.
 	\item Diagrama de instalación.
 	\item Documentación del proyecto.
 \end{itemize}
@@ -345,7 +401,7 @@ Los entregables del proyecto son:
 \item Búsqueda de material bibliográfico (100 h)
 	\begin{enumerate}
 	\item Buscar hojas de datos de todos los componentes (40 h)
-	\item Estudiar cómo funciona cada uno de los componentes (40 h)
+	\item Buscar modelos de visión por computadora (40 h)
 	\item Investigar sobre dispositivos con funciones similares (20 h)
 	\end{enumerate}
 \item Comprensión del objeto de trabajo (90 h)
@@ -356,29 +412,29 @@ Los entregables del proyecto son:
 	\item Impacto de las variables climatológicas (20 h)
 	\item Reuniones con especialistas en la plantación (10 h)
 	\end{enumerate}
- \item Preparación del hardware del sistema (80 h)
+ \item Preparación del hardware y modelo (80 h)
 	\begin{enumerate}
 	\item Selección de componentes (30 h)
 	\item Configuraciones de los componentes (30 h)
-	\item Pruebas de conexiones y funcionamiento (20 h)
+	\item Pruebas de funcionamiento (20 h)
 	\end{enumerate}
- \item Desarrollo del firmware (230 h)
+ \item Desarrollo del firmware y modelo (230 h)
 	\begin{enumerate}
 	\item Diseño de la arquitectura del firmware (20 h)
-	\item Desarrollo del driver para el sensor de temperatura y humedad ambiente (30 h)
-	\item Desarrollo del driver para el sensor de distancia (30 h)
-	\item Desarrollo del driver para la pantalla LCD (30 h)
-	\item Desarrollo del driver para la tarjeta microSD (30 h)
-    \item Desarrollo del driver para el módulo de cámara digital (30 h)
+	\item Desarrollo de los drivers del dispositivo (60 h)
 	\item Montar el sistema operativo (15 h)
-    \item Implementar la biblioteca HAL (10 h)
+	\item Implementar la biblioteca HAL (10 h)
 	\item Integración de los módulos (35 h)
+    \item Recolección de imágenes para entrenamiento (30 h)
+	\item Selección y etiquetado de imágenes (15 h)
+    \item Desarrollo y configuración del modelo (10 h)
+	\item Entrenamiento del modelo (35 h)
 	\end{enumerate}
  \item Testing (30 h)
 	\begin{enumerate}
-	\item Testeo del ensamblaje del hardware (10 h)
 	\item Testeo del firmware (10 h)
-	\item Depuración del firmware (10 h)
+	\item Testeo del modelo (10 h)
+	\item Depuración general (10 h)
 	\end{enumerate}
  \item Cierre del proyecto (120 h)
 	\begin{enumerate}
@@ -394,7 +450,7 @@ Cantidad total de horas: (725 h)
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-En la figura \ref{fig:DAON} se resalta en color rojo las flechas que corresponden al camino crítico y a las que hay que prestar mayor atención. La suma del camino crítico estima un tiempo de desarrollo del proyecto de 540 horas.
+En la figura \ref{fig:DAON} se resalta en color rojo las flechas que corresponden al camino crítico y a las que hay que prestar mayor atención. La suma del camino crítico estima un tiempo de desarrollo del proyecto de 580 horas.
 
 \begin{figure}[htpb]
 \centering 
@@ -409,7 +465,7 @@ En la figura \ref{fig:DAON} se resalta en color rojo las flechas que corresponde
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto. Para su realización se estableció un horario laboral de 6 horas de lunes a viernes.
+En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto. Para su realización se estableció un horario laboral de 4 horas de lunes a viernes.
 
 \begin{figure}[htpb]
   \begin{center}
@@ -420,65 +476,77 @@ En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto. Para 
       y unit title=0.4cm,
       y unit chart=0.6cm,
       milestone/.append style={xscale=4}
-      ]{2024-06-17}{2024-12-18}
-      \gantttitlecalendar*{2024-06-17}{2024-12-18}{year} \\
-      \gantttitlecalendar*{2024-06-17}{2024-12-18}{month} \\
-      \ganttgroup{Duración Total}{2024-06-17}{2024-10-31} \\
-      %%%%%%%%%%%%%%%%%Documentación y análisis preliminar
-      \ganttgroup{Documentación y análisis preliminar}{2024-06-17}{2024-06-20} \\
-      \ganttbar{Planificación del proyecto}{2024-06-17}{2024-06-20} \\
-      \ganttbar{Especificación de requisitos de software}{2024-06-17}{2024-06-20} \\
-      \ganttbar{Definición de las pruebas de aceptación}{2024-06-17}{2024-06-20} \\
-      %%%%%%%%%%%%%%%%%Búsqueda de material bibliográfico
-      \ganttgroup{Búsqueda de material bibliográfico}{2024-06-21}{2024-6-30} \\
-      \ganttbar{Buscar hojas de datos de todos los componentes}{2024-06-21}{2024-6-27} \\
-      \ganttbar{Estudiar cómo funciona cada uno de los componentes}{2024-06-21}{2024-6-27} \\
-      \ganttbar{Investigar sobre dispositivos con funciones similares}{2024-6-28}{2024-6-30} \\
-      %%%%%%%%%%%%%%%%%Comprensión del objeto de trabajo
-      \ganttgroup{Comprensión del objeto de trabajo}{2024-07-1}{2024-7-4} \\
-      \ganttbar{Estudiar cómo se compone una plantación de kiwi}{2024-07-1}{2024-7-4} \\
-      \ganttbar{Características y tipos de frutos}{2024-07-1}{2024-7-4} \\
-      \ganttbar{Métodos de estimación de la cosecha}{2024-07-1}{2024-7-4} \\
-      \ganttbar{Impacto de las variables climatológicas}{2024-07-1}{2024-7-4} \\
-      \ganttbar{Reuniones con especialistas en la plantación}{2024-07-1}{2024-7-2} \\
-      %%%%%%%%%%%%%%%%%Preparación del hardware del sistema
-      \ganttgroup{Preparación del hardware del sistema}{2024-07-5}{2024-9-3} \\
-      \ganttbar{Selección de componentes}{2024-07-5}{2024-7-10} \\
-      \ganttbar{Configuraciones de los componentes}{2024-07-11}{2024-7-15} \\
-      \ganttbar{Pruebas de conexiones y funcionamiento}{2024-08-31}{2024-9-3} \\
-      %%%%%%%%%%%%%%%%%Desarrollo del firmware
-      \ganttgroup{Desarrollo del firmware}{2024-07-21}{2024-8-30} \\
-      \ganttbar{Diseño de la arquitectura del firmware}{2024-07-21}{2024-7-24} \\
-      \ganttbar{Desarrollo del driver para el sensor de temperatura y humedad}{2024-07-25}{2024-7-30} \\
-      \ganttbar{Desarrollo del driver para el sensor de distancia}{2024-07-31}{2024-8-4} \\
-      \ganttbar{Desarrollo del driver para la pantalla LCD}{2024-08-5}{2024-8-10} \\
-      \ganttbar{Desarrollo del driver para la tarjeta microSD}{2024-08-11}{2024-8-15} \\
-      \ganttbar{Desarrollo del driver para el módulo de cámara digital}{2024-08-16}{2024-8-20} \\
-      \ganttbar{Montar el sistema operativo}{2024-08-21}{2024-8-22} \\
-      \ganttbar{Implementar la biblioteca HAL}{2024-08-23}{2024-8-24} \\
-      \ganttbar{Integración de los módulos}{2024-08-25}{2024-8-30} \\
-      %%%%%%%%%%%%%%%%%Testing
-      \ganttgroup{Testing}{2024-09-4}{2024-9-10} \\
-      \ganttbar{Testeo del ensamblaje del hardware}{2024-09-4}{2024-9-6} \\
-      \ganttbar{Testeo del firmware}{2024-09-7}{2024-9-8} \\
-      \ganttbar{Depuración del firmware}{2024-09-9}{2024-9-10} \\
-      %%%%%%%%%%%%%%%%%Cierre del proyecto
-      \ganttgroup{Cierre del proyecto}{2024-09-11}{2024-10-3} \\
-      \ganttbar{Informes de avance del proyecto}{2024-09-11}{2024-9-14} \\
-      \ganttbar{Elaboración de la memoria técnica del trabajo final}{2024-09-15}{2024-9-29} \\
-      \ganttbar{Presentación final del proyecto}{2024-09-30}{2024-10-3} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      ]{2025-06-02}{2025-12-15}
+      
+      \gantttitlecalendar*{2025-06-02}{2025-12-15}{year} \\
+      \gantttitlecalendar*{2025-06-02}{2025-12-15}{month} \\
+      
+      \ganttgroup{Duración Total}{2025-06-02}{2025-12-15} \\
+      
+      %%%%%%%%%%%%%%%%% 1. Documentación y análisis preliminar
+      \ganttgroup{1. Documentación y análisis preliminar}{2025-06-02}{2025-06-09} \\
+      \ganttbar{1.1 Planificación del proyecto}{2025-06-02}{2025-06-04} \\
+      \ganttbar{1.2 Especificación de requisitos de software}{2025-06-05}{2025-06-07} \\
+      \ganttbar{1.3 Definición de pruebas de aceptación}{2025-06-08}{2025-06-09} \\
+      
+      %%%%%%%%%%%%%%%%% 2. Búsqueda de material bibliográfico
+      \ganttgroup{2. Búsqueda de material bibliográfico}{2025-06-10}{2025-06-23} \\
+      \ganttbar{2.1 Buscar hojas de datos de componentes}{2025-06-10}{2025-06-15} \\
+      \ganttbar{2.2 Buscar modelos de visión por computadora}{2025-06-16}{2025-06-20} \\
+      \ganttbar{2.3 Investigar dispositivos similares}{2025-06-21}{2025-06-23} \\
+      
+      %%%%%%%%%%%%%%%%% 3. Comprensión del objeto de trabajo
+      \ganttgroup{3. Comprensión del objeto de trabajo}{2025-06-24}{2025-07-11} \\
+      \ganttbar{3.1 Composición de plantaciones de kiwi}{2025-06-24}{2025-06-27} \\
+      \ganttbar{3.2 Características y tipos de frutos}{2025-06-30}{2025-07-03} \\
+      \ganttbar{3.3 Estimación de la cosecha}{2025-07-04}{2025-07-07} \\
+      \ganttbar{3.4 Variables climatológicas}{2025-07-08}{2025-07-10} \\
+      \ganttbar{3.5 Reuniones con especialistas}{2025-07-11}{2025-07-11} \\
+      
+      %%%%%%%%%%%%%%%%% 4. Preparación del hardware y modelo
+      \ganttgroup{4. Preparación del hardware y modelo}{2025-07-14}{2025-07-28} \\
+      \ganttbar{4.1 Selección de componentes}{2025-07-14}{2025-07-18} \\
+      \ganttbar{4.2 Configuración de componentes}{2025-07-21}{2025-07-25} \\
+      \ganttbar{4.3 Pruebas de funcionamiento}{2025-07-28}{2025-07-28} \\
+      
+      %%%%%%%%%%%%%%%%% 5. Desarrollo del firmware y modelo
+      \ganttgroup{5. Desarrollo del firmware y modelo}{2025-07-29}{2025-09-26} \\
+      \ganttbar{5.1 Arquitectura del firmware}{2025-07-29}{2025-07-31} \\
+      \ganttbar{5.2 Drivers del dispositivo}{2025-08-01}{2025-08-20} \\
+      \ganttbar{5.3 Montar sistema operativo}{2025-08-21}{2025-08-22} \\
+      \ganttbar{5.4 Biblioteca HAL}{2025-08-25}{2025-08-26} \\
+      \ganttbar{5.5 Integración de módulos}{2025-08-27}{2025-09-01} \\
+      \ganttbar{5.6 Recolección de imágenes}{2025-09-02}{2025-09-05} \\
+      \ganttbar{5.7 Selección y etiquetado de imágenes}{2025-09-08}{2025-09-10} \\
+      \ganttbar{5.8 Desarrollo y configuración del modelo}{2025-09-11}{2025-09-12} \\
+      \ganttbar{5.9 Entrenamiento del modelo}{2025-09-15}{2025-09-26} \\
+      
+      %%%%%%%%%%%%%%%%% 6. Testing
+      \ganttgroup{6. Testing}{2025-09-29}{2025-10-03} \\
+      \ganttbar{6.1 Testeo del firmware}{2025-09-29}{2025-09-30} \\
+      \ganttbar{6.2 Testeo del modelo}{2025-10-01}{2025-10-02} \\
+      \ganttbar{6.3 Depuración general}{2025-10-03}{2025-10-03} \\
+      
+      %%%%%%%%%%%%%%%%% 7. Cierre del proyecto
+      \ganttgroup{7. Cierre del proyecto}{2025-10-06}{2025-12-15} \\
+      \ganttbar{7.1 Informes de avance del proyecto}{2025-10-06}{2025-10-10} \\
+      \ganttbar{7.2 Elaboración de la memoria técnica}{2025-10-13}{2025-12-05} \\
+      \ganttbar{7.3 Presentación final del proyecto}{2025-12-08}{2025-12-15} \\
+      
     \end{ganttchart}
   \end{center}
-  \caption{Diagrama de Gantt.}
+  \caption{Diagrama de Gantt del proyecto.}
   \label{fig:gantt}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-Los precios expresados en la siguiente tabla se encuentran en peso argentino (ARS) y fue estimado el 20 de mayo del 2024.
+Los precios expresados en la siguiente tabla se encuentran en peso argentino (ARS) y fue estimado el 13 de mayo del 2025.
 
 \begin{table}[htpb]
 \centering
@@ -495,66 +563,84 @@ Descripción &
   \hline Tarjeta de desarrollo STM32F429ZI
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{23 491} &
-  \multicolumn{1}{c|}{23 491} 
+  \multicolumn{1}{c|}{80 000} &
+  \multicolumn{1}{c|}{80 000} 
   \\ 
   \hline Módulo Dht11 Sensor De Temperatura Humedad
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{2 399} &
-  \multicolumn{1}{c|}{2 399} 
+  \multicolumn{1}{c|}{5 000} &
+  \multicolumn{1}{c|}{5 000} 
   \\ 
   \hline Sensor Ultrasonico Hc Sr04
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{2 300} &
-  \multicolumn{1}{c|}{2 300}
+  \multicolumn{1}{c|}{5 000} &
+  \multicolumn{1}{c|}{5 000}
   \\ 
   \hline Modulo Display Lcd 16x2 Con I2c
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{5 785} &
-  \multicolumn{1}{c|}{5 785}
+  \multicolumn{1}{c|}{12 000} &
+  \multicolumn{1}{c|}{12 000}
   \\ 
   \hline Módulo Lector De Tarjetas Micro Sd
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{3 600} &
-  \multicolumn{1}{c|}{3 600}
+  \multicolumn{1}{c|}{8 500} &
+  \multicolumn{1}{c|}{8 500}
   \\ 
   \hline Módulo cámara OV7670
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{8 000} &
-  \multicolumn{1}{c|}{8 000}
+  \multicolumn{1}{c|}{18 000} &
+  \multicolumn{1}{c|}{18 000}
   \\ 
   \hline Kit 40 Cables Dupont
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{2 712} &
-  \multicolumn{1}{c|}{2 712}
+  \multicolumn{1}{c|}{6 000} &
+  \multicolumn{1}{c|}{6 000}
   \\ 
   \hline Batería 3.7v 2000 mA
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{15 205} &
-  \multicolumn{1}{c|}{15 205}
+  \multicolumn{1}{c|}{35 000} &
+  \multicolumn{1}{c|}{35 000}
   \\ 
   \hline Cable USB mallado
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{5 300} &
-  \multicolumn{1}{c|}{5 300}
+  \multicolumn{1}{c|}{10 500} &
+  \multicolumn{1}{c|}{10 500}
+  \\ 
+  \hline Artículos de librería
+ &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{30 000} &
+  \multicolumn{1}{c|}{30 000}
+  \\ 
+  \hline Licencias de software
+ &
+  \multicolumn{1}{c|}{3} &
+  \multicolumn{1}{c|}{60 000} &
+  \multicolumn{1}{c|}{180 000}
+  \\ 
+  \hline Servicios en la nube
+ &
+  \multicolumn{1}{c|}{5} &
+  \multicolumn{1}{c|}{45 000} &
+  \multicolumn{1}{c|}{225 000}
   \\ 
   \hline Horas de ingeniería
  &
   \multicolumn{1}{c|}{725} &
-  \multicolumn{1}{c|}{35 264} &
-  \multicolumn{1}{c|}{25 566 400}
+  \multicolumn{1}{c|}{0} &
+  \multicolumn{1}{c|}{0}
   \\ 
   \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{25 635 192} \\ \hline
+  \multicolumn{1}{c|}{615 000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -567,13 +653,13 @@ Descripción &
 &
 \multicolumn{1}{|l|}{1} &
 \multicolumn{1}{|l|}{1} &
-\multicolumn{1}{|l|}{7 690 558} 
+\multicolumn{1}{|l|}{184 500} 
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{7 690 558} \\ \hline
+  \multicolumn{1}{c|}{184 500} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-\multicolumn{1}{|l|}{33 325 750} 
+\multicolumn{1}{|l|}{799 500} 
    \\ \hline 
 \end{tabularx}
 \end{table}
@@ -604,16 +690,16 @@ Riesgo 3: mala estimación de la planificación.
 	\item Ocurrencia (8): no se cuenta con experiencia en planificación de proyectos.\\
 \end{itemize}
 
-Riesgo 4: variación de precios en la compra del hardware.
+Riesgo 4: variación de precios en la compra del hardware y software.
 \begin{itemize}
 	\item Severidad (8): el capital necesario para adquirir el equipo del proyecto se vería afectado.\\
 	\item Ocurrencia (8): se tiene conocimiento de que existe mucha fluctuación en los precios de mercado.\\
 \end{itemize}
 
-Riesgo 5: retraso en la programación del firmware.
+Riesgo 5: retraso en el desarrollo del firmware y modelo.
 \begin{itemize}
-	\item Severidad (8): retrasos en el proyecto debido a que el firmware es una parte fundamental en el momento de la integración e implementación del prototipo.\\
-	\item Ocurrencia (7): falta de conocimiento y experiencia en la tecnología del hardware.\\
+	\item Severidad (8): retrasos en el proyecto debido a que el firmware y el modelo es una parte fundamental en la integración e implementación del prototipo.\\
+	\item Ocurrencia (7): falta de conocimiento y experiencia en la tecnología trabajada.\\
 \end{itemize}
 
 b) Tabla de gestión de riesgos:
@@ -627,8 +713,8 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Demora para conseguir los componentes electrónicos requeridos & 7 & 6 & 42  &    &    &      \\ \hline
 Daño o pérdida del hardware del proyecto & 8 & 4 & 32  &    &    &      \\ \hline
 Mala estimación de la planificación & 7 & 8 & \cellcolor{red}{56}  & 8  & 5  & \cellcolor{green}{40}   \\ \hline
-Variación de precios en la compra del hardware & 8 & 8 & \cellcolor{red}{64}  & 9 & 5  & \cellcolor{green}{45}   \\ \hline
-Retraso en la programación del firmware & 8 & 7 & \cellcolor{red}{56}  & 8  & 5  & \cellcolor{green}{40}   \\ \hline
+Variación de precios en la compra del hardware y software & 8 & 8 & \cellcolor{red}{64}  & 9 & 5  & \cellcolor{green}{45}   \\ \hline
+Retraso en la programación del firmware y modelo & 8 & 7 & \cellcolor{red}{56}  & 8  & 5  & \cellcolor{green}{40}   \\ \hline
 \end{tabularx}%
 \end{table}
 
@@ -644,7 +730,7 @@ Riesgo 3*: se consultará con el director la planificación para ajustar los tie
 	\item Probabilidad de ocurrencia (5): Se reduce el riesgo de hacer una mala planificación del proyecto.
 	\end{itemize}
 
-Riesgo 4*: se consultará con el cliente la posibilidad de efectuar compras de hardware con anticipación.
+Riesgo 4*: se consultará con el cliente la posibilidad de efectuar compras de hardware y software con anticipación.
   \begin{itemize}
 	\item Severidad (9): puede que el cliente no disponga de capital para hacer una compra anticipada.
 	\item Probabilidad de ocurrencia (5): se reduce el riesgo de variación de precios.
@@ -691,6 +777,30 @@ Para cada uno de los requerimientos funcionales, a continuación, se lista su re
 \begin{itemize}
 	\item Verificación: Revisar si se guardan las fotografías en el medio de almacenamiento.
 	\item Validación: Probar de contabilizar el total de fotos y mostrar el valor en un monitor serial.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.5: El sistema debe contabilizar los frutos detectados en cada imagen.
+\begin{itemize}
+	\item Verificación: Revisar si las salidas contienen frutos detectados en la imagen.
+	\item Validación: Probar de contabilizar el total de elementos manualmente y compararlo con la salida generada.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.6: El sistema debe informar el volumen total estimado de cosecha.
+\begin{itemize}
+	\item Verificación: Revisar la sumatoria final obtenida.
+	\item Validación: Probar de contabilizar el total de frutos en cada imagen y compararlo con el resultado final generado.
+\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#1.7: Generar un resumen final con la segmentación de zonas que presentaron comportamientos similares en la producción.
+\begin{itemize}
+	\item Verificación: Revisar si el informe generado es correcto en su estructura.
+	\item Validación: Ver si las zonas indicadas efectivamente tienen relación en la producción.
 \end{itemize}
 \end{itemize}
 
@@ -775,7 +885,7 @@ En esta sección se establecen las pautas de trabajo para realizar una reunión 
 	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
     \begin{itemize}
         \item Encargado: \authorname
-        \item Procedimiento: Tras la exposición pública del proyecto frente al jurado, se llevará a cabo un expresivo reconocimiento hacia aquellos que contribuyeron a su realización, incluyendo al director del trabajo, los miembros del jurado y las autoridades de la CESE.
+        \item Procedimiento: Tras la exposición pública del proyecto frente al jurado, se llevará a cabo un expresivo reconocimiento hacia aquellos que contribuyeron a su realización, incluyendo al director del trabajo, los miembros del jurado y las autoridades de la MIAE.
     \end{itemize}
 \end{itemize}
 
