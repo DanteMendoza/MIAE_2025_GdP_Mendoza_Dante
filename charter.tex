@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Monitoreo inteligente para plantaciones agrícolas basado en visión por computadora y análisis de imágenes} 
+\titulo{Monitoreo inteligente para plantaciones agrícolas basado en visión por computadora} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Maestría en inteligencia artificial embebida} 
@@ -84,9 +84,11 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de inspección de plantaciones. El trabajo tendrá un presupuesto preliminar estimado de 725 horas y un costo estimado de \$ 799.500 pesos argentinos (ARS), con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema de inspección de plantaciones. El trabajo tendrá un presupuesto preliminar estimado de 725 horas y un costo estimado de \$ 1.082.250 pesos argentinos (ARS), con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública en diciembre del 2025.
 
 Se adjunta a esta acta la planificación inicial.
+
+%\fechaFinalName. QUIZAS LUEGO DEBA USUARLO
 
 \vfill
 
@@ -109,7 +111,7 @@ En la Argentina la actividad relacionada con la cosecha del kiwi ha ganado una r
 
 Actualmente, el volumen de cosecha se estima mediante el conteo de frutos por unidad de superficie en una etapa avanzada de desarrollo. Sin embargo, esta estimación tardía resulta demasiado cercana al momento de la cosecha y presenta grandes dificultades en plantaciones de tamaño mediano o grande. Una estimación temprana del rendimiento permitiría tomar decisiones tanto operativas como estratégicas. Desde el punto de vista operativo, facilitaría una planificación más racional del uso de los recursos. Desde el punto de vista estratégico, haría posible anticipar la negociación de la producción en los mercados interno o externo.
 
-Por lo tanto, el objetivo de este proyecto es desarrollar un prototipo equipado con cámaras, sensores ultrasónicos, pantalla LCD, lector de tarjetas microSD, y sensores de temperatura y humedad. El dispositivo será montado sobre un medio de transporte adecuado a las características de la plantación. Permitirá la captura automática de imágenes de los frutos, así como el registro de datos ambientales relevantes durante el recorrido. Todos los datos se almacenarán localmente en una tarjeta microSD. Posteriormente, las imágenes serán procesadas mediante técnicas de visión por computadora para detectar objetos relevantes, como frutos en etapas tempranas de maduración. De este modo, se obtendrá una estimación del volumen de cosecha.
+Por lo tanto, el objetivo de este proyecto es desarrollar un prototipo que permita realizar una estimación temprana del volumen de cosecha de kiwi mediante la captura automatizada de imágenes y el registro de datos ambientales en el terreno. Para ello, el dispositivo estará equipado con cámaras, sensores ultrasónicos, pantalla LCD, lector de tarjetas microSD, y sensores de temperatura y humedad. El dispositivo será montado sobre un medio de transporte adecuado a las características de la plantación. Permitirá la captura automática de imágenes de los frutos, así como el registro de datos ambientales relevantes durante el recorrido. Todos los datos se almacenarán localmente en una tarjeta microSD. Posteriormente, las imágenes serán procesadas mediante técnicas de visión por computadora para detectar objetos relevantes, como frutos en etapas tempranas de maduración. De este modo, se obtendrá una estimación del volumen de cosecha.
 
 Finalmente, la información sobre los frutos detectados y los datos meteorológicos se utilizarán para aplicar técnicas de agrupamiento no supervisado, con el fin de identificar patrones ocultos entre las variables ambientales y la cantidad de frutos, y segmentar automáticamente zonas con comportamientos similares. Toda la información generada se almacenará en un archivo de texto plano. Esta solución proporcionará al productor información valiosa para la toma de decisiones en relación con la planificación y ejecución de la cosecha. En la figura \ref{fig:diagBloques}, se puede apreciar un diagrama de bloques del prototipo.
 
@@ -126,7 +128,7 @@ Finalmente, la información sobre los frutos detectados y los datos meteorológi
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-En este apartado, se definirán los involucrados dentro del presente proyecto;
+En este apartado, se definirán los involucrados dentro del presente proyecto.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -143,21 +145,21 @@ Usuario final   & Agricultores	      & - 	& - \\ \hline
 \end{tabularx}
 \end{table}
 
-Por lo tanto, es importante destacar algunas características de los involucrados mencionados;
+Por lo tanto, es importante destacar algunas características de los involucrados mencionados:
 
 \begin{itemize}
 	\item Orientador: \supname\hspace{1px} es experto en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del modelo de detección de objetos.
-	\item Colaboradores: Lic. Aldana Ojeda es investigadora ad honorem con experiencia en el área.
-    \item Cliente: La universidad UNO es la principal interesada en llevar a cabo este trabajo de investigación.
-    \item Usuario final: Los agricultores serán los beneficiarios de la implementación.
-    \item Responsable: Será quien dispondrá del conocimiento y desarrollo del proyecto.
+	\item Colaboradores: lic. Aldana Ojeda es investigadora ad honorem con experiencia en el área.
+    \item Cliente: la universidad UNO es la principal interesada en llevar a cabo este trabajo de investigación.
+    \item Usuario final: los agricultores serán los beneficiarios de la implementación.
+    \item Responsable: será quien dispondrá del conocimiento y desarrollo del proyecto.
 \end{itemize}
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-La importancia de este proyecto radica en su potencial para automatizar y agilizar el proceso de inspección de plantaciones de kiwis, ofreciendo una alternativa eficiente y tecnológica a los métodos manuales tradicionales. Al integrar dispositivos de captura de imágenes y recolección de datos ambientales con técnicas de visión por computadora y análisis no supervisado, se proporciona una herramienta  que permite estimar con mayor anticipación el volumen de producción. Esto no solo mejora la precisión en la planificación de la cosecha, sino que también optimiza el uso de los recursos disponibles, generando un impacto positivo en la eficiencia y rentabilidad del productor.
+La importancia de este proyecto radica en su potencial para automatizar y agilizar el proceso de inspección de plantaciones de kiwis, ofreciendo una alternativa eficiente y tecnológica a los métodos manuales tradicionales. Al integrar dispositivos de captura de imágenes y recolección de datos ambientales con técnicas de visión por computadora y análisis no supervisado, se proporciona una herramienta  que permite estimar con mayor anticipación el volumen de producción. Esto no solo mejora la precisión en la planificación de la cosecha, sino que también optimiza el uso de los recursos disponibles, al generar un impacto positivo en la eficiencia y rentabilidad del productor.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -186,13 +188,11 @@ El proyecto no incluye:
 Para el desarrollo del presente proyecto, se estima que se dispondrá de los siguientes elementos o consideraciones:
 
 \begin{itemize}
-    \item Sistema de gestión de bases de datos.
-    \item Control de versiones.
-    \item Consultas a expertos en la plantación de kiwis.
+    \item Expertos en la plantación de kiwis, disponibles para consultas.
     \item Servicios en la nube para almacenamiento.
     \item Herramientas de análisis de datos.
     \item Horas hombre para la codificación.
-    \item Reuniones con el equipo de trabajo.
+    \item Equipo de trabajo disponible para realizar reuniones.
     \item Equipamiento informático.
     \item Licencias de software.
     \item Artículos de librería.
@@ -234,6 +234,7 @@ Esta sección detalla los requerimientos del software, delineando las funcionali
             \item Se debe mostrar la cantidad de fotos tomadas.
             \item La información en pantalla debe actualizarse cada 5 segundos.
 		\end{enumerate}
+        \newpage
     \item Requerimientos de interoperabilidad:
 		\begin{enumerate}
 			\item Las fotos deben almacenarse en un formato de archivo JPG o JPEG.
@@ -635,12 +636,12 @@ Descripción &
   \hline Horas de ingeniería
  &
   \multicolumn{1}{c|}{725} &
-  \multicolumn{1}{c|}{0} &
-  \multicolumn{1}{c|}{0}
+  \multicolumn{1}{c|}{300} &
+  \multicolumn{1}{c|}{217 500}
   \\ 
   \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{615 000} \\ \hline
+  \multicolumn{1}{c|}{832 500} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -653,13 +654,13 @@ Descripción &
 &
 \multicolumn{1}{|l|}{1} &
 \multicolumn{1}{|l|}{1} &
-\multicolumn{1}{|l|}{184 500} 
+\multicolumn{1}{|l|}{249 750} 
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{184 500} \\ \hline
+  \multicolumn{1}{c|}{249 750} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-\multicolumn{1}{|l|}{799 500} 
+\multicolumn{1}{|l|}{1 082 250} 
    \\ \hline 
 \end{tabularx}
 \end{table}
